@@ -101,6 +101,14 @@ public class Helpers {
         }
     }
 
+    public static void timeout(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException ex) {
+            System.out.println("Exception is caught");
+        }
+    }
+
     public static WebElement findElement(WebDriver driver, By by) {
         return new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(by));
     }
