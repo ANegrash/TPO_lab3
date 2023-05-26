@@ -68,7 +68,7 @@ public class UploadTest {
                 ((JavascriptExecutor)driver).executeScript(script);
             else
                 throw new IllegalStateException("This driver does not support JavaScript!");
-            Helpers.findElement(driver, By.xpath(xpath)).sendKeys("E:\\duck.jpg");
+            Helpers.findElement(driver, By.xpath(xpath)).sendKeys("E:\\bad_duck.jpg");
         });
         Helpers.timeout();
     }
