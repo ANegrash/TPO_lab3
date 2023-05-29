@@ -19,7 +19,7 @@ public class LogOutTest {
     }
 
     @Test
-    public void testMyUploads() {
+    public void testLogOut() {
         openSite();
         signIn();
         tryLogOut();

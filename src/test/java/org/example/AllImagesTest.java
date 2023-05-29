@@ -19,7 +19,7 @@ public class AllImagesTest {
     }
 
     @Test
-    public void testMyUploads() {
+    public void testAllImagesView() {
         openSite();
         goToAllImagesPage();
         checkSectionName();

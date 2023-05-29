@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -19,7 +20,7 @@ public class SearchTest {
     }
 
     @Test
-    public void testSignIn() {
+    public void testSearching() {
         openSiteToSearching();
         enterInSearchLine();
         clickSearchButton();
@@ -42,8 +43,13 @@ public class SearchTest {
     }
 
     public void clickSearchButton() {
+        String expectedURL = "https://archive.org/search?query=itmo";
         String xpath = "/html/body/div/div[2]/ia-topnav/div[1]/primary-nav/nav/nav-search/div/form/button";
-        drivers.forEach(driver -> Helpers.findElement(driver, By.xpath(xpath)).click());
+        drivers.forEach(driver -> {
+            Helpers.findElement(driver, By.xpath(xpath)).click();
+            String redirectURL = driver.getCurrentUrl();
+            Assertions.assertEquals(expectedURL, redirectURL);
+        });
         Helpers.timeout();
     }
 }

@@ -19,7 +19,7 @@ public class UploadTest {
     }
 
     @Test
-    public void testSignIn() {
+    public void testUpload() {
         openSiteToUploading();
         signIn();
         clickUploadOnTheMainPage();
@@ -89,7 +89,6 @@ public class UploadTest {
             Helpers.findElement(driver, By.xpath(xpath3)).click();
             Helpers.findElement(driver, By.xpath(xpathSelect)).click();
             Helpers.findElement(driver, By.xpath(xpathSelectItem)).click();
-
         });
         Helpers.timeout();
     }
